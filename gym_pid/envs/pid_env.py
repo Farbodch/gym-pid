@@ -21,6 +21,7 @@ class PidEnv(gym.Env):
         self.yhistory = [0]
 
     def step(self, action):
+        self.currpoint = [0, 0]
         self.kp = action[0] # Increasing p term reduces rise time
         self.ki = action[1]
         self.kd = action[2] # Increasing d term improves stability and decreases overshoot
